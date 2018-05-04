@@ -1,26 +1,29 @@
 # earthquake-recognition
 
-I am researching using neural nets for earthquake detection.
 
-Pretty messy right now, I'll clean up the Repo at the end of this internship.
-
-(I accidentally deleted the repo's history, there should be a few hundred commits)
-
-
-
-### Neural Nets for earthquake recognition
+## Dataset
 
 1. Retrieving and processing the data:
 
-https://github.com/jamesaud/earthquake-recognition/blob/waveforms/pytorch_earthquake_recognition/retrieve_data.ipynb
+https://github.com/jamesaud/seismic-analysis-toolbox
 
-2. Training the Data with Neural Nets (where I'm at now, for the next month)
+The idea is to feed in Spectrogram images to a convolutional neural network in order to detect earthquakes.
 
-https://github.com/jamesaud/earthquake-recognition/tree/neuralnet/pytorch_earthquake_recognition/experiment
+The data is too large to be held on github, but you can download the data with the toolbox. I will make my dataset available in the future (on Dropbox or something).
+
+On my machine I have roughly 4 million waveforms downloaded!
+
+## Code
+
+Written in Pytorch.
+
+If you are familar with Pytorch, the main code will look familiar:
+
+https://github.com/jamesaud/earthquake-detector-9000/blob/neuralnet/main.py
 
 
-### Other Stuff
+## Visualization
 
-##### Basic Data Processing:
+Run `docker-compose up` to get Tensorboard running on localhost:6000
 
-https://github.com/jamesaud/earthquake-recognition/blob/waveforms/notebooks/Tanzania/Earthquakes%20in%20Tanzania.ipynb
+The code in main is configured to write to the folder for visualization.
