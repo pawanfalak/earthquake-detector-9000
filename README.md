@@ -29,15 +29,15 @@ In the 'main' code, if the configuration is set to 'environment', `configuration
 
 
 
-## Performance
+## Single Location Performance
 
-The convnet does 99.9% accuracy on QUALITY datasets. 
+The convnet does 99.x% accuracy on QUALITY datasets. 
 
 Many times, the automatic generation of seismic datasets has improperly labeled events or noise. In order to determine what is good quality, use Data Validation. 
 
-## Data Validation (finding good datasets)
+## Data Validation (finding good single location datasets)
 
-To run the conv net on every location, run:
+If you programtically compile a dataset, how do you *really* know that it is correctly labeled? Stations can have noise, low amplitude events may not show up, etc. To run the conv net on every location to test for data accuracy, run:
 
 `python data_validate.py`
 
@@ -63,6 +63,4 @@ https://github.com/jamesaud/earthquake-detector-9000/tree/neuralnet/tests
 
 ## Notes
 
-This is a work in progress still. Some of the code (like data_validate.py) does some unconvential things (reloading modules, reading and writing config to a file). 
-
-Part of this is Pytorch seems to be structured for single runs, so when you need to run multiple nets multiple times, it is easier to just reset the module to ensure all weights are set to 0, etc. A big refactor would help my code I think :)
+This is a work in progress still. Some of the code (like data_validate.py) does some unconvential things like module reloading. Pytorch seems to have been written for single runs. When you need to run multiple nets sequentially with different data, it is easier to just reset the module to ensure all weights are set to 0, etc.
